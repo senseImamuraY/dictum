@@ -18,18 +18,20 @@ services:
       - "3000:3000"
     depends_on:
       - db
-      - chrome
+      # - chrome
     stdin_open: true 
     tty: true 
     environment:
-      SELENIUM_REMOTE_URL: http://chrome:4444/wd/hub
+      # SELENIUM_REMOTE_URL: http://chrome:4444/wd/hub
+      # APP_DATABASE: db
+      RAILS_ENV: development
 
-  chrome:
-    # image: selenium/standalone-chrome:latest
-    image: selenium/standalone-chrome-debug:latest
-    ports:
-      - 4444:4444
-      - 5900:5900
+  # chrome:
+  #   # image: selenium/standalone-chrome:latest
+  #   image: selenium/standalone-chrome-debug:latest
+  #   ports:
+  #     - 4444:4444
+  #     - 5900:5900
       
 
     
